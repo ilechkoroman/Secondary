@@ -1,5 +1,6 @@
 from flask_restplus import Resource
 from flask import request
+import random
 import time
 
 from app.api.decorators import post_response, get_response, delete_response
@@ -24,8 +25,10 @@ class POST(Resource):
         data = post_data.get('data')
 
         logger.info('Adding to memory list in master')
+        delay = random.randint(10, 30)
+        logger.info(f'Delay at he instance is {delay}')
+        time.sleep(delay)
         INMEMORY_LIST.append(data)
-        time.sleep(10)
         return {'status': 'success'}
 
 
