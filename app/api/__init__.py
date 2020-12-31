@@ -12,7 +12,6 @@ api_v1 = Api(api_v1_bp)
 
 
 secondary_ns.add_resource(secondary.POST, '/post')
-secondary_ns.add_resource(secondary.Delete, '/delete')
 secondary_ns.add_resource(secondary.GET, '/get')
 
 

@@ -25,6 +25,7 @@ def post_response(f):
         except:
             logger.exception("Fatal error during processing.")
             result = {'status': 'fail',
+                      'error': f'{traceback.format_exc()}',
                       'message': f'Something went wrong - {traceback.format_exc()}'}, 500
         return result
     return wrapped
